@@ -1,0 +1,24 @@
+<link rel="stylesheet" href="/css/style.css">
+<header>
+<nav class="navbar navbar-expand-lg bg-light sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Logo</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link fs-5 <%=path==='/'?'active_line':' '%>" aria-current="page" href="/">Blog Registration</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fs-5 <%=path==='/auth/logindata'?'active_line':' '%>" aria-current="page" href="/auth/logindata">Blog Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fs-5 <%=path==='/blog/getdash'?'active_line':' '%>" aria-current="page" href="/blog/getdash">Dashboard</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>

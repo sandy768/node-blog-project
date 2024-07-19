@@ -1,0 +1,42 @@
+<link rel="stylesheet" href="/css/dashboard.css">
+<%-include('../includes/header.ejs')%>
+<title>
+<%=title%>
+</title>
+</head>
+<body>
+    <main>
+        <h1 class="mt-5 text-center text-light fw-bold">All Blogs</h1>
+        <%if(data.length>0){%>
+                <div class="wrapper">
+                    <%for(let obj of data){%>
+                    <div class="user-card">
+                        <div class="user-card-img">
+                            <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                                <%for(let i in obj.blog_img){%>
+                                <div class="carousel-inner">
+                                  <div class="carousel-item active">
+                                    <img src="/auth/<%=obj.blog_img[i]%>" class="d-block w-150" alt="...">
+                                    </div>
+                                </div>
+                                <%}%>
+                                
+                              </div>
+                             
+                        </div>
+                        
+                        <div class="user-card-info">
+                          <h2><span>Blog Title:</span><%=obj.title%></h2>
+                          <p><span>Blog Description:</span><%=obj.desc%></p>
+                        </div>
+                    </div>
+                    <%}%>
+                </div>
+            <div class="d-flex justify-content-center mt-5 mb-5">
+                <a href="/blog/getdash" class="btn btn-lg btn-success">Go To Dashboard</a>
+            </div>
+        <%}else{%>
+            <h1>Content not found</h1>
+        <%}%>
+    </main>
+<%-include('../includes/footer.ejs')%>

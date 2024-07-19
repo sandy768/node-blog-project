@@ -1,0 +1,34 @@
+<%-include('../includes/header.ejs')%>
+<title>
+<%=title%>
+</title>
+</head>
+<body>
+    <main>
+        <h1 class="mt-5 mb-4 text-center text-success fw-bold">Add Blog</h1>
+        <form class="mt-5 mb-5" action="/blog/postdata" method="POST" autocomplete="off" enctype="multipart/form-data">
+            <div class="mt-5 mb-3 mx-3">
+                <p class="text-success fw-semibold fs-5"><%=success_add%></p>
+            </div>
+            <div class="mt-5 mb-3">
+                <input type="hidden" name="email" id="email" value="<%=info.email%>">
+            </div>
+            <div class="mb-3 mx-3">
+                <label for="title" class="form-label">Blog Title</label>
+                <input type="text" class="form-control" name="title" id="title" placeholder="Enter Blog Title">
+            </div>
+            <div class="mb-3 mx-3">
+                <label for="desc" class="form-label">Blog Description</label>
+                <input type="text" class="form-control" name="desc" id="desc" placeholder="Enter Blog Description">
+            </div>
+            <div class="mb-3 mx-3">
+                <label for="blog_img" class="form-label">Upload Pics</label>
+                <input type="file" class="form-control" name="blog_img" id="blog_img" multiple>
+            </div>
+            <div class="d-flex justify-content-center mt-5 mb-5">
+                <button type="submit" class="btn btn-lg btn-primary">Add Blog</button>
+                <a href="/blog/getdash" class="btn btn-lg btn-secondary mx-3">Go To Dashboard</a>
+            </div>
+        </form>
+    </main>
+<%-include('../includes/footer.ejs')%>
